@@ -49,8 +49,10 @@ const TopNav = ({ isScrolled }) => {
 };
 
 const NavContainer = styled.div`
+  z-index: 10;
   position: fixed;
   width: 100%;
+  filter: brightness(100%);
   .scroll {
     display: flex;
     background-color: black;
