@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-
 import Header from "../components/Header";
 import BackgroundImage from "../components/BackgroundImage";
 import styled from "styled-components";
@@ -36,7 +35,7 @@ export default function LoginPage() {
             <div className="container">
               <input
                 type="email"
-                placeholder="Eamil"
+                placeholder="Email"
                 value={email}
                 name="email"
                 onChange={(event) => setEmail(event.target.value)}
