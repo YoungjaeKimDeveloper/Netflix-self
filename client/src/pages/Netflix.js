@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-
 import { FaInfoCircle } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
-// Library , Component
+// Library
 import TopNav from "../components/TopNav";
+import Card from "../components/Card";
+//Component
 export default function Netflix() {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,41 +16,40 @@ export default function Netflix() {
     return () => (window.pageXOffset = null);
   };
   return (
-    <div>
-      <HeroContainer>
-        <TopNav isScrolled={isScrolled} />
-        <div className="hero">
-          <img
-            src="https://res.cloudinary.com/ehizeex-shop/image/upload/v1668267540/NetflixApp/avengers-age-of-ultron-team-together-poster-wallpaper-1600x600-92751_84_qvwbif.jpg"
-            alt="hero-img"
-            className="background-image"
-          />
-          <div className="container">
-            <div className="title">
-              <h1>Super Man</h1>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book
-              </p>
-            </div>
-            <div className="buttons">
-              <button className="playBtn" onClick={() => navigate("/player")}>
-                Play
-              </button>
-              <button className="moreBtn">More</button>
-            </div>
+    <HeroContainer>
+      <TopNav isScrolled={isScrolled} />
+      <div className="hero">
+        <img
+          src="https://res.cloudinary.com/ehizeex-shop/image/upload/v1668267540/NetflixApp/avengers-age-of-ultron-team-together-poster-wallpaper-1600x600-92751_84_qvwbif.jpg"
+          alt="hero-img"
+          className="background-image"
+        />
+        <div className="container">
+          <div className="title">
+            <h1>Super Man</h1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book
+            </p>
+          </div>
+          <div className="buttons">
+            <button className="playBtn" onClick={() => navigate("/player")}>
+              Play
+            </button>
+            <button className="moreBtn">More</button>
           </div>
         </div>
-      </HeroContainer>
-    </div>
+      </div>
+      <Card />
+    </HeroContainer>
   );
 }
 
 const HeroContainer = styled.div`
   color: white;
-  img {
+  background-image: {
     width: 100%;
     height: 70vh;
   }
